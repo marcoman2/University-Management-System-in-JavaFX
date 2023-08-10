@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="universitiymanagementsystem.StudentMainFormController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane layoutX="112.0" layoutY="92.0" prefHeight="600.0" prefWidth="1100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="38.0" prefWidth="1100.0" stylesheets="@../Design/MainForm.css" BorderPane.alignment="CENTER">
+                     <styleClass>
+                        <String fx:value="white-bg" />
+                        <String fx:value="main-bg" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <Label layoutX="14.0" layoutY="9.0" text="Student Information" textFill="WHITE">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="200.0" prefWidth="217.0" stylesheets="@../Design/MainForm.css" BorderPane.alignment="CENTER">
+                     <styleClass>
+                        <String fx:value="main-bg" />
+                        <String fx:value="shadow" />
+                     </styleClass>
+                     <children>
+                        <FontAwesomeIcon fill="WHITE" glyphName="USER" layoutX="85.0" layoutY="80.0" size="5em" />
+                        <Label layoutX="22.0" layoutY="108.0" text="Student ID:" textFill="WHITE" />
+                        <Label fx:id="student_id" layoutX="90.0" layoutY="108.0" prefHeight="17.0" prefWidth="106.0" text="202100001" textFill="WHITE" />
+                        <Button fx:id="studentInformation_btn" layoutX="9.0" layoutY="186.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="200.0" styleClass="nav-btn" stylesheets="@../Design/MainForm.css" text="Student Information" />
+                        <Button fx:id="logout_btn" layoutX="14.0" layoutY="522.0" mnemonicParsing="false" onAction="#logoutBtn" styleClass="nav-btn" stylesheets="@../Design/MainForm.css" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="14.0">
+                           <graphic>
+                              <FontAwesomeIcon fill="WHITE" glyphName="SIGN_OUT" size="1.5em" />
+                           </graphic>
+                        </Button>
+                        <Label layoutX="61.0" layoutY="526.0" text="Logout" textFill="WHITE" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="61.0">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <AnchorPane layoutX="14.0" layoutY="19.0" prefHeight="524.0" prefWidth="510.0" stylesheets="@../Design/MainForm.css" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="359.0" AnchorPane.topAnchor="19.0">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                              <String fx:value="radius" />
+                           </styleClass>
+                           <children>
+                              <TableView fx:id="table_view" layoutX="14.0" layoutY="64.0" onMouseClicked="#teacherSelectData" prefHeight="446.0" prefWidth="482.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="64.0">
+                                <columns>
+                                  <TableColumn fx:id="studentInfo_col_teacherID" prefWidth="99.0" text="Teacher ID" />
+                                  <TableColumn fx:id="studentInfo_col_name" prefWidth="136.0" text="Name" />
+                                    <TableColumn fx:id="studentInfo_col_gender" prefWidth="110.0" text="Gender" />
+                                    <TableColumn fx:id="studentInfo_col_YE" prefWidth="136.0" text="Year Experience" />
+                                </columns>
+                                 <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                 </columnResizePolicy>
+                              </TableView>
+                              <Label layoutX="14.0" layoutY="14.0" text="Your Teachers">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="542.0" layoutY="19.0" prefHeight="524.0" prefWidth="327.0" stylesheets="@../Design/MainForm.css" AnchorPane.bottomAnchor="19.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="19.0">
+                           <styleClass>
+                              <String fx:value="white-bg" />
+                              <String fx:value="shadow" />
+                              <String fx:value="radius" />
+                           </styleClass>
+                           <children>
+                              <Circle fx:id="circle_image" fill="#303539" layoutX="164.0" layoutY="74.0" radius="60.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Label layoutX="74.0" layoutY="177.0" text="Teacher ID:" />
+                              <Label fx:id="teacher_id" layoutX="141.0" layoutY="177.0" prefHeight="17.0" prefWidth="172.0" text="----------" />
+                              <Label layoutX="98.0" layoutY="210.0" text="Name:" />
+                              <Label fx:id="teacher_name" layoutX="141.0" layoutY="210.0" prefHeight="17.0" prefWidth="172.0" text="----------" />
+                              <Label layoutX="83.0" layoutY="245.0" text="Gender:" />
+                              <Label fx:id="teacher_gender" layoutX="141.0" layoutY="245.0" prefHeight="17.0" prefWidth="172.0" text="----------" />
+                              <Label layoutX="102.0" layoutY="285.0" text="Date:" />
+                              <Label fx:id="teacher_date" layoutX="141.0" layoutY="285.0" prefHeight="17.0" prefWidth="172.0" text="----------" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
